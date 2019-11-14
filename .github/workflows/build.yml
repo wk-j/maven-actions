@@ -11,4 +11,5 @@ jobs:
       - name: Build
         run: |
           export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          export build=$(date +%Y%m%d-%H%M%S)
           mvn deploy -s settings.xml -Dbuild=$(date +%Y%m%d-%H%M%S)
